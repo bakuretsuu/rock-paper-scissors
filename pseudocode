@@ -1,0 +1,17 @@
+function getComputerChoice
+1. generate random number (0 to 1)
+2. if 0-0.33 => "rock", 0.34-0.66 => "paper", 0.67-1 => "scissors"
+3. return string
+
+function getHumanChoice
+1. create a prompt to get the user's input
+2. return input
+
+function playRound
+1. define parameters humanChoice and getComputerChoice
+2. make humanChoice case-insensitive
+3. if else code for playing
+    a. if humanChoice = rock getComputerChoice = scissors or 
+    b.
+4. output the result of the round 
+5. increase humanScore or computerScore based on winner
