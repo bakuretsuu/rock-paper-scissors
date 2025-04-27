@@ -21,19 +21,35 @@ function getHumanChoice(){
     return humanChoice.toLocaleLowerCase();
 }
 
-let humanScore = 0;
-let computerScore = 0;
+
 
 
 function playRound(humanChoice, computerChoice){
  if (humanChoice == computerChoice){
-    return "draw"
+    console.log("draw") 
  }
  else if ((humanChoice == "rock" && computerChoice == "scissors")||(humanChoice == "paper" && computerChoice == "rock")||(humanChoice == "scissors" && computerChoice == "paper")){
     humanScore++
-    return `You win! ${humanChoice} beats ${computerChoice}`
- }
+    console.log(`You win! ${humanChoice} beats ${computerChoice}`) 
+    }
 else {
     computerScore++
-    return `You lose. ${computerChoice} beats ${humanChoice}`
+    console.log(`You lose. ${computerChoice} beats ${humanChoice}`)
+}
+}
+
+let humanScore = 0;
+let computerScore = 0;
+function playGame(){
+  
+
+    for (let i = 1; i <= 5; i++) {
+        playRound(getHumanChoice(),getComputerChoice())
+        console.log(`Round ${i} human:${humanScore}  computer:${computerScore}`)
+      }
+
+
+
+
+
 }
