@@ -25,17 +25,26 @@ function getHumanChoice(){
 
 
 function playRound(humanChoice, computerChoice){
+    let result = document.querySelector("#result");
+    let resultMessage = "";
+
  if (humanChoice == computerChoice){
     console.log("draw") 
+    resultMessage += "draw";
  }
  else if ((humanChoice == "rock" && computerChoice == "scissors")||(humanChoice == "paper" && computerChoice == "rock")||(humanChoice == "scissors" && computerChoice == "paper")){
     humanScore++
     console.log(`You win! ${humanChoice} beats ${computerChoice}`) 
+    resultMessage += `You win! ${humanChoice} beats ${computerChoice}`;
     }
 else {
     computerScore++
     console.log(`You lose. ${computerChoice} beats ${humanChoice}`)
+    resultMessage += `You lose. ${computerChoice} beats ${humanChoice}`;
 }
+resultMessage +=`<br>Score - You: ${humanScore},  Computer: ${computerScore}`;
+result.innerHTML = resultMessage;
+
 }
 
 let humanScore = 0;
@@ -57,3 +66,5 @@ paperButton.addEventListener("click",() => playRound("paper", getComputerChoice(
 
 let scissorButton = document.querySelector('#scissors');
 scissorButton.addEventListener("click", () => playRound("scissors", getComputerChoice()));
+
+
