@@ -43,8 +43,15 @@ else {
     resultMessage += `You lose. ${computerChoice} beats ${humanChoice}`;
 }
 resultMessage +=`<br>Score - You: ${humanScore},  Computer: ${computerScore}`;
-result.innerHTML = resultMessage;
+if (humanScore === 5 || computerScore === 5){
+    let winner = humanScore === 5 ? "You win the game" : "Computer wins the game";
+    resultMessage += `<br><strong>Game Over: ${winner}</strong>`;
 
+    document.querySelector("#rock").disabled = true;
+    document.querySelector("#paper").disabled = true;
+    document.querySelector("#scissors").disabled = true;
+}
+result.innerHTML = resultMessage;
 }
 
 let humanScore = 0;
