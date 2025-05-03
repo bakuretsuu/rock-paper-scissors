@@ -11,7 +11,13 @@ function playRound
 1. define parameters humanChoice and getComputerChoice
 2. make humanChoice case-insensitive
 3. if else code for playing
-    a. if humanChoice = rock getComputerChoice = scissors or 
-    b.
+    a. if humanchoice = computerchoice => draw
+    b. if humanChoice = rock ComputerChoice = scissors or humanchoice = paper computerchoice = rock or humanchoice = scissors computerchoice = paper => "You win! humanchoice beats computerchoice"
+    c. else => "You lose! humanchoice loses to computerchoce"
 4. output the result of the round 
 5. increase humanScore or computerScore based on winner
+
+function playGame
+1. create loop for 5 rounds
+2. call playRound functions for each loop
+3. output score

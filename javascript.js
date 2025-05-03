@@ -40,16 +40,20 @@ else {
 
 let humanScore = 0;
 let computerScore = 0;
-function playGame(){
-  
-
-    for (let i = 1; i <= 5; i++) {
-        playRound(getHumanChoice(),getComputerChoice())
-        console.log(`Round ${i} human:${humanScore}  computer:${computerScore}`)
-      }
 
 
+// function playGame(){
+//     for (let i = 1; i <= 5; i++) {
+//         playRound(getHumanChoice(),getComputerChoice())
+//         console.log(`Round ${i} human:${humanScore}  computer:${computerScore}`)
+//       }
+// }
 
+let rockButton = document.querySelector('#rock');
+rockButton.addEventListener("click", () => playRound("rock", getComputerChoice()) );
 
+let paperButton = document.querySelector('#paper');
+paperButton.addEventListener("click",() => playRound("paper", getComputerChoice()) );
 
-}
+let scissorButton = document.querySelector('#scissors');
+scissorButton.addEventListener("click", () => playRound("scissors", getComputerChoice()));
